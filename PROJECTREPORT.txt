@@ -1,0 +1,185 @@
+% Ultra-formal Project Report in XeLaTeX (EB Garamond)
+% Leave space on first page for college logo
+
+\documentclass[12pt]{report}
+
+% === Packages ===
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{array}
+
+% === Layout ===
+\geometry{a4paper, margin=1in}
+\setstretch{1.15}
+\setmainfont{EB Garamond}
+
+% === Headers ===
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Stationery Management Project Report}
+\lhead{VIT Bhopal University}
+\cfoot{\thepage}
+
+% === Title Formatting ===
+\titleformat{\chapter}{\normalfont\LARGE\bfseries}{\thechapter.}{12pt}{}
+
+% === Document ===
+\begin{document}
+
+% ==========================
+% Title Page (with logo space)
+% ==========================
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    % Placeholder for College Logo
+    % -------------------------------------------------
+    % Replace "college_logo.png" with actual file later
+    \vspace{3cm} % SPACE LEFT INTENTIONALLY
+    % \includegraphics[width=5cm]{college_logo.png} % Uncomment after adding file
+    % -------------------------------------------------
+
+    {\Huge \textbf{Stationery Management System}}\\[12pt]
+    {\Large Project Report}\\[24pt]
+
+    {\large \textbf{Department of Computer Science and Engineering}}\\[6pt]
+    {\large Integrated M.Tech in CSE (Computational and Data Science)}\\[6pt]
+    {\large VIT Bhopal University}\\[2cm]
+
+    \vfill
+    \begin{tabular}{>{\bfseries}l l}
+        Student Name: & Aryan K Menon \\
+        Registration No.: & 25MIP10129 \\
+        Course: & CSE1021 — Introduction to Problem Solving and Programming \\
+        Project Title: & Stationery Management System \\
+        Academic Year: & 2025--2026 \\
+    \end{tabular}
+
+    \vfill
+    {\large \today}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ==========================
+% Chapter 1 — Introduction
+% ==========================
+\chapter{Introduction}
+The Stationery Management System is a graphical desktop application designed using Python's built-in \texttt{tkinter} library. It provides a clean, modular, and user-friendly interface to record item quantities, compute total prices, and generate a formatted receipt. The system aims to simplify retail-level stationery billing, automate manual calculations, and ensure error-free record keeping.
+
+\section*{Objectives}
+\begin{itemize}[leftmargin=*]
+    \item To develop a functional GUI using Python's standard libraries.
+    \item To implement modular, maintainable, and extensible program structure.
+    \item To calculate and display total stationery cost dynamically.
+    \item To provide a receipt-style output for clarity and practical use.
+\end{itemize}
+
+\section*{Scope of the Project}
+This software targets small stationery stores, school inventory systems, and quick estimation needs. It operates entirely offline, requires no external dependencies, and provides a minimal yet highly functional workflow.
+
+\newpage
+
+% ==========================
+% Chapter 2 — System Design
+% ==========================
+\chapter{System Design}
+
+\section*{Overall Architecture}
+The application follows a clean separation of concerns:\\
+\textbf{Interface Layer} handles layout, input fields, and interactive elements.\\
+\textbf{Logic Layer} computes totals, validates input, and generates receipts.\\
+\textbf{Data Layer} stores item prices and maintains quantity variables.
+
+\section*{Data Structures}
+Prices are stored in a Python dictionary of the form:
+\begin{verbatim}
+ITEMS = {
+    "Pencil": 5,
+    "Eraser": 3,
+    ...
+}
+\end{verbatim}
+Quantities are managed using \texttt{IntVar()} for live updates and validation.
+
+
+\newpage
+
+% ==========================
+% Chapter 3 — Implementation
+% ==========================
+\chapter{Implementation}
+
+\section*{Programming Language}
+The project is written entirely in Python 3.x using the standard \texttt{tkinter} library.
+
+\section*{Key Features}
+\begin{itemize}[leftmargin=*]
+    \item Real-time total computation.
+    \item Automatic sanitization of invalid entries.
+    \item Clean, structured UI layout.
+    \item Auto-generated receipt with itemized details.
+\end{itemize}
+
+\section*{Execution}
+Run the application using:\\
+\texttt{python3 "STATIONARY MANAGNMENT final.py"}
+
+\newpage
+
+% ==========================
+% Chapter 4 — Testing and Results
+% ==========================
+\chapter{Testing and Results}
+
+\section*{Testing Strategy}
+The system underwent manual tests including:\n\begin{itemize}[leftmargin=*]
+    \item Zero-quantity entries.
+    \item Negative values converted safely to zero.
+    \item Non-numeric input handling.
+    \item Large-quantity stress testing.
+\end{itemize}
+
+\section*{Sample Output}
+A typical receipt displays item names, quantities, individual costs, and the final computed total.
+
+\newpage
+
+% ==========================
+% Chapter 5 — Conclusion
+% ==========================
+\chapter{Conclusion}
+The Stationery Management System provides an efficient solution for day-to-day billing in a stationery environment. Its modular design ensures extensibility for future enhancements such as database integration, multi-user access, and inventory tracking.
+
+\section*{Future Scope}
+\begin{itemize}[leftmargin=*]
+    \item Addition of user authentication.
+    \item Integration with SQL-based inventory systems.
+    \item Exportable PDF receipts.
+    \item Theming and custom color profiles.
+\end{itemize}
+
+\newpage
+
+% ==========================
+% References
+% ==========================
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+\begin{itemize}[leftmargin=*]
+    \item Python Official Documentation — \url{https://docs.python.org/3/}
+    \item Tkinter Module Reference — Python Docs
+\end{itemize}
+
+\end{document}
