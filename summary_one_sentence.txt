@@ -1,0 +1,1 @@
+This project implements a Python Tkinter-based Stationery Management System that calculates item totals, generates a formatted receipt, includes a clean GUI, and provides a complete academic README and project report.
